@@ -16,8 +16,8 @@ Aplicação full-stack para consulta de endereços no Brasil a partir de um CEP 
 
 ## 🚀 Tecnologias Utilizadas
 
-* **Backend:** C#, .NET 9, ASP.NET Core (API RESTful)
-* **Frontend:** HTML, CSS, JavaScript (Vanilla)
+* **Backend:** C#, .NET 9
+* **Frontend:** HTML, CSS, JavaScript 
 * **APIs Externas:** ViaCEP (dados de endereço) e IBGE (dados de estados/municípios).
 * **Ferramentas:**  Visual Studio, Visual Code, Git.
 
