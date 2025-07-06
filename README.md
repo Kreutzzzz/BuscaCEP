@@ -2,9 +2,8 @@
 
 Aplicação full-stack para consulta de endereços no Brasil a partir de um CEP ou de um endereço parcial (UF, Cidade, Logradouro). Construído como um desafio técnico.
 
-![Demonstração da Aplicação]()
+![image](https://github.com/user-attachments/assets/0057cee8-4074-4050-a435-8f2915094499)
 
----
 
 ## ✨ Funcionalidades
 
@@ -20,7 +19,7 @@ Aplicação full-stack para consulta de endereços no Brasil a partir de um CEP 
 * **Backend:** C#, .NET 9, ASP.NET Core (API RESTful)
 * **Frontend:** HTML, CSS, JavaScript (Vanilla)
 * **APIs Externas:** ViaCEP (dados de endereço) e IBGE (dados de estados/municípios).
-* **Ferramentas:** Git, GitHub, Visual Studio.
+* **Ferramentas:**  Visual Studio, Visual Code, Git.
 
 ---
 
