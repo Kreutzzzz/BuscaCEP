@@ -1,0 +1,215 @@
+
+html {  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Estilos globais do corpo da página. */
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  background: linear-gradient(to right, #192a56, #274abb, #4070f4);
+  padding: 20px;
+}
+
+/* === CONTAINER PRINCIPAL (O CARD) === */
+
+.container-principal {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  padding: 35px;
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  /* Posição relativa para servir como âncora para elementos filhos com posicionamento absoluto. */
+  position: relative;
+}
+
+.titulo-principal {
+  color: #3687a4;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+}
+
+/* === FORMULÁRIOS === */
+
+/* Organiza os campos do formulário em uma coluna com espaçamento consistente. */
+.formulario-estilizado {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label-estilizado {
+  font-weight: bold;
+  color: #555;
+  font-size: 0.95em;
+  /* Pequeno ajuste de margem para aproximar o label do seu input. */
+  margin-bottom: -5px;
+}
+
+/* Estilo base para todos os campos de entrada, garantindo consistência visual. */
+.input-estilizado {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1.1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Efeito visual para indicar ao usuário qual campo está ativo. */
+.input-estilizado:focus {
+  border-color: #3687a4;
+  box-shadow: 0 0 0 3px rgba(54, 135, 164, 0.2);
+}
+
+/* Classe para destacar campos com erro de validação. */
+.input-estilizado.input-erro {
+    border-color: #c0392b;
+}
+
+/* Estilo padrão para os botões de ação principais. */
+.botao-principal {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #3687a4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.botao-principal:hover {
+  background-color: #2a6a80;
+}
+
+.divisor {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  margin: 30px 0;
+}
+
+
+/* === LÓGICA DE SOBREPOSIÇÃO DOS RESULTADOS === */
+
+/* O container de resultados é posicionado de forma para sobrepor a área do formulário */
+#resultadoContainer {
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  right: 35px;
+  bottom: 35px;
+  
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  padding: 20px;
+  
+  /* Flexbox para organizar o conteúdo interno (resultados e botão 'Nova Pesquisa'). */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+}
+
+/* A área de resultados ocupa todo o espaço vertical disponível e ganha uma barra de rolagem se o conteúdo for maior. */
+#resultado {
+  flex-grow: 1; 
+  overflow-y: auto; 
+  margin-bottom: 20px;
+}
+
+/* Classe utilitária para esconder/mostrar elementos com uma transição suave de opacidade. */
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+/* === BLOCOS DE COMPONENTES DINÂMICOS === */
+
+.mensagem-erro {
+  background-color: #ffebee;
+  color: #c0392b;
+  border: 1px solid #e74c3c;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Estilo para cada card de endereço na lista de resultados. */
+.resultado-item {
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.resultado-item p {
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+}
+
+.resultado-item p:last-child {
+  margin-bottom: 0;
+}
+
+.resultado-item strong {
+  color: #34495e;
+}
+
+/* Botões de ação secundários dentro da lista de resultados. */
+.botao-ver-completo {
+  background-color: #7f8c8d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.botao-ver-completo:hover {
+  background-color: #6c7a89;
+}
+
+.botao-voltar {
+  background-color: #95a5a6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.2s;
+  align-self: flex-start;
+}
+
+.botao-voltar:hover {
+  background-color: #7f8c8d;
+}

@@ -1,0 +1,29 @@
+
+@BuscaCepApi_HostAddress = https://localhost:7001
+
+###
+# ----------------------------------------------------
+# Teste 1: Buscar um endereço pelo CEP
+# ----------------------------------------------------
+# Chama o endpoint /api/BuscaCep/{cep} com um CEP válido de São Paulo.
+GET {{BuscaCepApi_HostAddress}}/api/BuscaCep/88356034
+Accept: application/json
+
+###
+# ----------------------------------------------------
+# Teste 2: Buscar um endereço pelo CEP (exemplo de CEP não encontrado)
+# ----------------------------------------------------
+# Chama o endpoint /api/BuscaCep/{cep} com um CEP que não existe.
+# A API deve retornar um erro 404 Not Found com a mensagem "CEP não encontrado."
+GET {{BuscaCepApi_HostAddress}}/api/BuscaCep/99999999
+Accept: application/json
+
+###
+# ----------------------------------------------------
+# Teste 3: Buscar um endereço por UF, Município e Logradouro
+# ----------------------------------------------------
+# Chama o endpoint /api/BuscaEndereco com parâmetros de query string.
+GET {{BuscaCepApi_HostAddress}}/api/BuscaEndereco?uf=SC&municipio=Brusque&logradouro=Rua%20Elvira%20da%20Silva
+Accept: application/json
+
+###
