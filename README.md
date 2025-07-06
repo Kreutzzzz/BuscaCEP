@@ -28,9 +28,12 @@ Aplicação full-stack para consulta de endereços no Brasil a partir de um CEP 
 ### **1. Backend (API)**
 
 1.  Clone o repositório.
+    ```bash
+    git clone https://github.com/Kreutzzzz/BuscaCEP
+    ```
 2.  Navegue até a pasta da API:
     ```bash
-    cd BuscaCepApi
+    cd BuscaCEP\API-BuscaCEP\BuscaCepApi
     ```
 3.  Execute a API usando o perfil HTTPS:
     ```bash
